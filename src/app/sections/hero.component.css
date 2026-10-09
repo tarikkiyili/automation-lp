@@ -1,0 +1,46 @@
+.actions .button {
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+.actions .button:focus-visible { box-shadow: 0 4px 14px #365a8c26; }
+.actions .text-link {
+  position: relative; display: inline-flex; align-items: center; min-height: 44px;
+  text-decoration: none; transition: color 220ms ease;
+}
+.actions .text-link::after {
+  content: ''; position: absolute; bottom: 5px; left: 0; right: 0;
+  height: 2px; border-radius: 2px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 260ms cubic-bezier(.22, .65, .3, 1);
+}
+.actions .text-link:focus-visible { color: var(--accent); }
+.actions .text-link:focus-visible::after { transform: scaleX(1); }
+@media (hover: hover) {
+  .actions .button:hover { transform: translate(-3px, -1px); box-shadow: 0 5px 16px #365a8c26; }
+  .actions .text-link:hover { color: var(--accent); }
+  .actions .text-link:hover::after { transform: scaleX(1); }
+}
+.actions .button:active { transform: translateY(1px) scale(.98); box-shadow: none; }
+.calendar { animation: calendar-float 8s ease-in-out infinite; }
+@keyframes calendar-float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-5px) rotate(-1.5deg); }
+}
+.motion-toggle { padding: 8px; min-height: 36px; border: 0; border-radius: 5px; background: transparent; color: var(--muted); font-size: 10px; cursor: pointer; }
+.motion-toggle:hover { color: var(--ink); background: var(--surface-soft); }
+.schedule-window { height: 243px; overflow: hidden; }
+.schedule-list { display: grid; gap: 12px; }
+.schedule-row { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 10px; align-items: center; height: 73px; }
+.appointment { position: relative; height: 73px; display: flex; flex-direction: column; justify-content: center; padding: 10px; }
+.appointment strong { line-height: 1.4; }
+.new-row .appointment { background: #dce7f5; border-left-color: var(--accent); }
+.new-label { position: absolute; top: 3px; right: 7px; color: var(--accent); font-size: 8px; font-weight: 600; }
+.arriving .schedule-row { animation: row-shift 650ms cubic-bezier(.22, .65, .3, 1) both; }
+.arriving .new-row { animation: row-arrive 650ms cubic-bezier(.22, .65, .3, 1) both; }
+@keyframes row-shift { from { transform: translateY(-85px); } to { transform: translateY(0); } }
+@keyframes row-arrive { from { opacity: 0; transform: translateY(-85px); } to { opacity: 1; transform: translateY(0); } }
+.motion-paused .calendar, .motion-paused .schedule-row { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .actions .button, .actions .text-link, .actions .text-link::after { transition: none; }
+  .calendar, .arriving .schedule-row { animation: none; }
+  .motion-toggle { display: none; }
+}

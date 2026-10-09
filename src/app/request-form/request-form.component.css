@@ -1,0 +1,58 @@
+:host { display: block; }
+.request-section { padding-block: 100px 88px; }
+.request-grid { grid-template-columns: 1fr 1.08fr; gap: 76px; align-items: center; }
+.request-copy { padding-top: 0; }
+.request-copy h2 { font-size: clamp(38px, 4vw, 53px); line-height: 1.13; margin-bottom: 26px; }
+.request-copy .request-lead { font-size: 16px; line-height: 1.85; max-width: 370px; }
+.request-guidance { display: flex; align-items: stretch; gap: 20px; margin-top: 36px; max-width: 360px; }
+.guidance-line { width: 2px; flex: 0 0 2px; background: linear-gradient(var(--accent), #365a8c15); border-radius: 2px; }
+.request-guidance h3 { font-size: 15px; line-height: 1.5; margin-bottom: 8px; letter-spacing: 0; }
+.request-guidance p { font-size: 14px; margin: 0; line-height: 1.8; }
+.request-copy .request-example { margin: 32px 0 0; font-size: 12px; line-height: 1.9; color: #4a607c; }
+.form-stage { position: relative; isolation: isolate; margin-top: 130px; min-width: 0; }
+.request-grid form { position: relative; z-index: 1; padding: 36px; border-radius: 18px; border-color: #becde0; box-shadow: 0 22px 60px #142b5010, 0 3px 10px #142b5005; }
+.form-heading { padding-bottom: 22px; margin-bottom: 5px; border-bottom: 1px solid var(--line); }
+.form-kicker { display: block; font-size: 10px; font-weight: 700; letter-spacing: 1.7px; color: var(--accent); margin-bottom: 12px; }
+.form-heading h3 { font: 400 31px/1.2 Georgia, serif; letter-spacing: -.7px; margin-bottom: 12px; }
+.form-heading p { margin-bottom: 0; font-size: 13px; line-height: 1.65; }
+.field { margin-top: 20px; }
+input, select, textarea { border-color: #b6c5d8; border-radius: 8px; background: #fafbfd; transition: border-color 180ms, box-shadow 180ms, background 180ms; }
+input:focus, select:focus, textarea:focus { background: #fff; border-color: var(--accent); box-shadow: 0 0 0 3px #365a8c12; }
+input[aria-invalid=true], select[aria-invalid=true], textarea[aria-invalid=true] { border-color: var(--error); }
+.submit-button { justify-content: center; border-radius: 8px; transition: transform 180ms, box-shadow 180ms; }
+.submit-button:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 18px #365a8c25; }
+.submit-button:active:not(:disabled) { transform: translateY(0); }
+.privacy-note { color: #52637b; font-size: 11px; line-height: 1.7; text-align: center; }
+.form-companion { position: absolute; width: 230px; height: 159px; right: 24px; top: -139px; z-index: 0; pointer-events: none; }
+.companion-portrait { width: 100%; height: 100%; overflow: visible; }
+.companion-grip { position: absolute; width: 230px; height: auto; right: 24px; top: -8px; z-index: 2; pointer-events: none; }
+.companion-head { transform-origin: 130px 104px; animation: companion-nod 12s ease-in-out infinite; }
+.companion-eyes { transform-box: fill-box; transform-origin: center; animation: companion-blink 6.4s linear infinite; }
+/* Let people focus on filling the form. */
+.form-stage:focus-within .companion-portrait * { animation-play-state: paused; }
+@keyframes companion-blink { 0%, 43%, 47%, 100% { transform: scaleY(1); } 45% { transform: scaleY(.12); } }
+@keyframes companion-nod { 0%, 20%, 60%, 100% { transform: rotate(0); } 32%, 46% { transform: rotate(1.5deg); } }
+@media (max-width: 900px) { .request-grid { gap: 36px; }.request-grid form { padding: 28px; } }
+@media (max-width: 680px) {
+  .request-section { padding-block: 60px; }
+  .request-grid { grid-template-columns: 1fr; gap: 28px; }
+  .request-copy h2 { font-size: 40px; }
+  .request-copy h2 br { display: initial; }
+  .request-copy .request-lead { font-size: 15px; max-width: none; }
+  .request-guidance { margin-top: 24px; max-width: none; }
+  .request-copy .request-example { margin-top: 20px; }
+  .form-stage { margin-top: 116px; }
+  .request-grid form { padding: 28px 20px; border-radius: 14px; }
+  .form-heading h3 { font-size: 28px; }
+  .form-companion { width: 200px; height: 138px; top: -120px; right: 8px; }
+  .companion-grip { width: 200px; right: 8px; top: -7px; }
+  input, select, textarea { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .companion-portrait * { animation: none; }
+  input, select, textarea, .submit-button { transition: none; }
+}
+.name-fields { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.name-fields .field { min-width: 0; }
+textarea { resize: none; min-height: 124px; }
+@media (max-width: 380px) { .name-fields { gap: 10px; }.name-fields input { padding-inline: 9px; } }

@@ -1,0 +1,22 @@
+﻿.how-section-wrap { padding-block: 0 40px; }
+.how-surface { background: #142b50; border: 1px solid #243e63; border-radius: 19px; padding: 55px 52px 28px; position: relative; overflow: hidden; }
+.how-surface::before { content: ''; position: absolute; width: 330px; height: 330px; border: 1px solid #ffffff08; border-radius: 50%; right: -145px; top: -200px; box-shadow: 0 0 0 45px #ffffff03, 0 0 0 90px #ffffff02; pointer-events: none; }
+.how-heading { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 47px; }
+.how-heading .eyebrow { color: #b1c4df; font-size: 10px; }
+.how-heading h2 { color: #fff; font-size: clamp(34px, 3.5vw, 46px); line-height: 1.15; margin: 0; }.how-heading h2 em { color: #a9bfde; font-style: normal; }
+.how-heading > p { font-size: 13px; color: #bbcbe0; line-height: 1.85; margin: 0 0 4px; }
+.journey { list-style: none; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px; padding: 0; margin: 0; }
+.step-marker { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; }.step-marker > span { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; border: 1px solid #718bad; font: 18px Georgia, serif; color: #e0e9f5; flex-shrink: 0; transition: background 250ms ease, border-color 250ms ease; }.step-marker > div { height: 1px; flex: 1; background: linear-gradient(to right,#6d86a7,#6d86a720); }.journey li:last-child .step-marker > div { background: linear-gradient(to right,#6d86a770,transparent); }
+.step-label { display: block; font-size: 9px; letter-spacing: 1.5px; color: #a9bfde; margin-bottom: 12px; }
+.journey h3 { font-size: 20px; color: #fff; font-weight: 500; letter-spacing: -.4px; margin-bottom: 12px; }
+.journey p { color: #bfcde0; font-size: 13px; line-height: 1.85; margin: 0; }
+.how-bottom { margin-top: 40px; padding-top: 23px; border-top: 1px solid #ffffff20; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 12px; }.how-bottom > span { color: #a9bdd8; }.how-bottom a { color: #fff; padding-block: 12px; position: relative; }.how-bottom a::after { content: ''; position: absolute; bottom: 5px; inset-inline: 0; height: 1px; background: #adc6e7; transform: scaleX(.3); transform-origin: left; transition: transform 250ms ease; }.how-bottom a:hover::after, .how-bottom a:focus-visible::after { transform: scaleX(1); }
+.how-surface :focus-visible { outline-color: #d2e3fc; }
+@media (hover: hover) { .journey li:hover .step-marker > span { background: #284469; border-color: #a6bddb; } }
+@media (max-width: 900px) { .how-surface { padding: 40px 30px 23px; }.journey { gap: 22px; }.journey h3 { font-size: 18px; } }
+@media (max-width: 680px) {
+ .how-section-wrap { padding-bottom: 0; }.how-surface { padding: 32px 24px 18px; border-radius: 14px; }.how-heading { display: block; margin-bottom: 32px; }.how-heading h2 { font-size: 34px; }.how-heading > p { margin-top: 18px; font-size: 12px; }.how-heading > p br { display: none; }
+ .journey { grid-template-columns: 1fr; gap: 0; }.journey li { position: relative; padding: 0 0 30px 50px; }.journey li:last-child { padding-bottom: 0; }.step-marker { position: absolute; left: 0; top: 0; bottom: 0; margin: 0; display: block; }.step-marker > span { width: 32px; height: 32px; font-size: 15px; }.step-marker > div { width: 1px; height: auto; position: absolute; top: 41px; bottom: 9px; left: 16px; background: #718bad50; }.journey li:last-child .step-marker > div { display: none; }
+ .step-label { font-size: 8px; margin-bottom: 8px; }.journey h3 { font-size: 19px; margin-bottom: 9px; }.journey p { font-size: 12px; line-height: 1.75; }.how-bottom { margin-top: 28px; padding-top: 15px; flex-wrap: wrap; gap: 2px 16px; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) { .step-marker > span, .how-bottom a::after { transition: none; } }

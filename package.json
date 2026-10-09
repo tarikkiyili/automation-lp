@@ -1,0 +1,49 @@
+{
+  "name": "randevu-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.13 <25"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --env-file-if-exists=.env --watch server/index.js",
+    "dev:web": "ng serve --host 127.0.0.1 --proxy-config proxy.conf.json",
+    "build": "npm run i18n:build && ng build",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "test": "node --test tests/*.test.js",
+    "test:e2e": "playwright test",
+    "check": "npm test && npm run build && npm run test:e2e",
+    "i18n:build": "node scripts/build-translations.mjs",
+    "test:mongo": "node --env-file=.env --test tests/mongo.integration.js",
+    "test:e2e:mongo": "node --env-file=.env scripts/test-mongo-e2e.mjs"
+  },
+  "dependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@jsverse/transloco": "^8.4.0",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.0.0",
+    "helmet": "^8.0.0",
+    "mongodb": "^7.7.0",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.0",
+    "zod": "^4.0.0"
+  },
+  "overrides": {
+    "piscina": "^5.3.2",
+    "shell-quote": "^1.11.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.0",
+    "@angular/cli": "^21.2.0",
+    "@angular/compiler-cli": "^21.2.0",
+    "@playwright/test": "^1.56.0",
+    "concurrently": "^9.0.0",
+    "typescript": "~5.9.3"
+  }
+}
