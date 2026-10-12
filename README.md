@@ -6,7 +6,7 @@ Randevuyla çalışan işletmelere yönelik kurgusal hizmet tanıtımı ve çal�
 
 Geliştirici: [tarikkiyili](https://github.com/tarikkiyili) · [Canlı site](https://automation-lp-blond.vercel.app/).
 
-Canlı kontrol: arayüz çalışıyor; API sağlık kontrolü ve form gönderimi 503 dönüyor. Canlı kayıt doğrulanmadı; Vercel sunucu başlangıcı/ortam ayarları düzeltilmelidir.
+Canlı kontrol: sağlık kontrolü 200, form kaydı 201; kayıt Atlas'ta doğrulandı ve bağlantı yeniden açılınca korundu. Aynı gönderimin tekrarı 200 ve aynı kayıt kimliği, çakışan içerik 409, geçersiz e-posta 422 döndürdü. İlk yayındaki eksik MONGODB_URI kaynaklı 503, Production ortam değişkeni ve yeniden dağıtımla giderildi.
 
 ## Özellikler
 
@@ -128,7 +128,7 @@ API testleri geçici veritabanı, E2E ayrı `data/e2e.sqlite` kullanır. Yalnız
 
 ## Canlı yayın ve teslimde kalanlar
 
-Kaynak kod [özel GitHub deposunda](https://github.com/tarikkiyili/automation-lp) tutulur. [Vercel yayını](https://automation-lp-blond.vercel.app/) açıldı; arayüz 200, API 503 döndüğü için canlı form ve kalıcılık doğrulaması bekliyor. Değerlendiriciye ayrıca depo erişimi verilmelidir. GitHub Actions testleri başarılı; Docker çalışması doğrulanmadı.
+Kaynak kod [özel GitHub deposunda](https://github.com/tarikkiyili/automation-lp) tutulur. [Vercel yayını](https://automation-lp-blond.vercel.app/) ve canlı Atlas kaydı doğrulandı. Değerlendiriciye ayrıca depo erişimi verilmelidir. Son teslim öncesi yeniden dağıtımdan sonra mevcut kaydın korunduğu da kontrol edilmelidir. GitHub Actions testleri başarılı; Docker çalışması doğrulanmadı.
 
 Vercel kurulumu:
 

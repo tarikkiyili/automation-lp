@@ -12,8 +12,7 @@ Amaç: Randevuyla çalışan işletmelere yönelik kurgusal hizmeti anlatan tek 
 
 ## Sonraki adımlar
 
-1. Yayınlanan Vercel sitesindeki API 503 başlangıç hatasını ortam ayarları/Atlas erişimi ve Function loglarıyla çöz.
-2. Canlı form, hata davranışı ve yeniden dağıtım sonrası kalıcılığı doğrula.
+1. Canlı form ve Atlas kaydı doğrulandı; son yeniden dağıtımdan sonra mevcut kaydı tekrar kontrol et.
 3. Değerlendiriciye özel depo erişimi ver.
 4. Canlı URL, nihai commit kimliği ve kişisel başvuru bilgileriyle teslim et.
 

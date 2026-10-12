@@ -23,10 +23,11 @@ CI kanıtı: https://github.com/tarikkiyili/automation-lp/actions/runs/382495987
 ## Kalan zorunlu teslim işleri
 
 - [x] Canlı HTTPS arayüz yayını: https://automation-lp-blond.vercel.app/.
-- [ ] Vercel API başlangıç hatasını çöz: health ve form şu anda 503. Ortam değişkenleri/Atlas ağ erişimini doğrula.
-- [ ] Canlı HTTPS URL'de form, hata akışı ve yeniden dağıtım sonrası kayıt kalıcılığını kontrol et.
+- [x] Vercel API başlangıç hatası çözüldü: eksik MONGODB_URI Production ortamına eklendi ve yeniden dağıtıldı.
+- [x] Canlı sağlık kontrolü 200, form 201, tekrar 200, çakışma 409 ve sunucu doğrulaması 422. Atlas'ta tek kayıt ve yeniden bağlantı sonrası kalıcılık doğrulandı.
+- [ ] Son yeniden dağıtımdan sonra mevcut test kaydının korunduğunu kontrol et.
 - [ ] Özel depoya değerlendirici erişimi ver ve doğrula.
-- [x] README'ye canlı URL ve gözlenen API engeli eklendi.
+- [x] README'ye canlı URL ve başarılı kayıt doğrulaması eklendi.
 - [ ] Teslim öncesi sır kontrolünü tekrarla ve nihai commit kimliğini kaydet.
 - [ ] Canlı URL, kaynak kod bağlantısı ve commit kimliğini başvuru sistemine teslim et.
 

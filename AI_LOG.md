@@ -42,9 +42,11 @@ OpenAI Codex; planlama, Angular/Node kodu, SVG/CSS düzenlemeleri, test ve dokü
 
 Kullanıcının paylaştığı npm install-scripts uyarısı için dört Angular derleme bağımlılığının kaynak betikleri ve bağımlılık ağacı incelendi. npm 11.21.0 install-scripts approve ile yalnızca mevcut sürümler package.json allowScripts alanına eklendi. Ayrı temiz klasörde npm ci uyarısız tamamlandı ve 0 bilinen açık raporladı; kurulum izinleri genel olarak açılmadı. Resmî kaynak: https://docs.npmjs.com/cli/v11/commands/npm-install-scripts/.
 
-Canlı Vercel API başlangıç hatasının çözülmesi, canlı form ve kalıcılık kontrolü, değerlendirici depo erişimi, nihai URL/commit teslimi. Resmî başlangıç zamanı, gerçek aktif çalışma süresi ve geçmiş proje/kişisel katkı açıklaması kullanıcı tarafından tamamlanmalıdır.
+Son yeniden dağıtım sonrası mevcut kaydın kontrolü, değerlendirici depo erişimi, nihai URL/commit teslimi. Resmî başlangıç zamanı, gerçek aktif çalışma süresi ve geçmiş proje/kişisel katkı açıklaması kullanıcı tarafından tamamlanmalıdır.
 
 ## Canlı yayın kontrolü
+
+Son yeniden kontrolde eksik MONGODB_URI ayarı ve yeniden dağıtım sonrası API çalıştı: health 200, kurgusal form kaydı 201 ve arayüzde gerçek başarı mesajı. Aynı anahtarla tekrar 200 ve aynı kimlik; farklı içerik 409; geçersiz e-posta 422 döndü. Atlas'ta kayıt kimliğiyle sorgu tam bir belge buldu; MongoClient kapatılıp yeniden bağlanınca belge korundu. 1440/390 px'de taşma ve JavaScript hatası görülmedi; mobil dil/tema tercihleri yeniden yüklemede korundu. Yeniden dağıtımdan sonra bu başarılı kaydın kontrolü ayrıca bekliyor. Aşağıdaki ilk kontrol başarısızlığı tarihçe olarak tutulur.
 
 Vercel istek özetleri başlangıç hatasının nedenini göstermiyordu. Handler'a yalnızca önceden tanımlı sabit hata mesajlarını loglayan tanılama eklendi; ham hata, stack veya ortam değeri loglanmaz. Eksik URI, geçersiz ayarlar ve Atlas bağlantı hatası ayrıştırılabilir; istemci yanıtı genel 503 olarak kalır.
 
