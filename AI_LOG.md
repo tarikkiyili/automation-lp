@@ -44,6 +44,8 @@ Canlı Vercel API başlangıç hatasının çözülmesi, canlı form ve kalıcı
 
 ## Canlı yayın kontrolü
 
+Vercel istek özetleri başlangıç hatasının nedenini göstermiyordu. Handler'a yalnızca önceden tanımlı sabit hata mesajlarını loglayan tanılama eklendi; ham hata, stack veya ortam değeri loglanmaz. Eksik URI, geçersiz ayarlar ve Atlas bağlantı hatası ayrıştırılabilir; istemci yanıtı genel 503 olarak kalır.
+
 Kullanıcının paylaştığı https://automation-lp-blond.vercel.app/ Playwright ile kontrol edildi. Arayüz HTTP 200; 1440/390 px'de yatay taşma ve JavaScript çalışma hatası görülmedi. Mobil menü, TR/EN geçişi, tema saklama ve istemci doğrulaması çalıştı. API health ve kurgusal form gönderimi 503 döndü; form başarı göstermedi ve alanları korudu. API runtime kurulmadan reddedildiği için canlı sunucu doğrulaması, tekrar koruması ve kalıcılık bu koşumda doğrulanamadı. Aynı Atlas yerel bağlantısında ping başarılıydı; Vercel ortam ayarları/ağ erişimi ve Function logları incelenmelidir. Bu gerçek canlı engel teslim checklist'ine eklendi.
 
 Referanslar: [Transloco](https://jsverse.gitbook.io/transloco/), [Zod Mini](https://zod.dev/packages/mini), [MongoDB sürücüsü](https://www.mongodb.com/docs/drivers/node/current/crud/insert/), [Vercel Node runtime](https://vercel.com/docs/functions/runtimes/node-js).
