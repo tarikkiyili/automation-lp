@@ -40,6 +40,8 @@ OpenAI Codex; planlama, Angular/Node kodu, SVG/CSS düzenlemeleri, test ve dokü
 
 ## Açık teslim işleri
 
+Kullanıcının paylaştığı npm install-scripts uyarısı için dört Angular derleme bağımlılığının kaynak betikleri ve bağımlılık ağacı incelendi. npm 11.21.0 install-scripts approve ile yalnızca mevcut sürümler package.json allowScripts alanına eklendi. Ayrı temiz klasörde npm ci uyarısız tamamlandı ve 0 bilinen açık raporladı; kurulum izinleri genel olarak açılmadı. Resmî kaynak: https://docs.npmjs.com/cli/v11/commands/npm-install-scripts/.
+
 Canlı Vercel API başlangıç hatasının çözülmesi, canlı form ve kalıcılık kontrolü, değerlendirici depo erişimi, nihai URL/commit teslimi. Resmî başlangıç zamanı, gerçek aktif çalışma süresi ve geçmiş proje/kişisel katkı açıklaması kullanıcı tarafından tamamlanmalıdır.
 
 ## Canlı yayın kontrolü

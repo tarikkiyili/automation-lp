@@ -33,6 +33,8 @@ Canlı kontrol: arayüz çalışıyor; API sağlık kontrolü ve form gönderimi
 
 Node **24.13+ / 24.x**, npm 11 gerekir. Sürümler package-lock.json ile sabitlenir.
 
+Yeni npm sürümleri için `allowScripts`, Angular derleme bağımlılıkları olan @parcel/watcher, esbuild, lmdb ve msgpackr-extract paketlerinin incelenen sürümlerine kurulum betiği izni verir. Paket sürümü değişirse izin yeniden incelenmelidir; tüm paketlere genel izin verilmez.
+
 ```powershell
 npm ci
 # İlk kurulumda; mevcut .env dosyanız varsa üzerine yazmayın.
