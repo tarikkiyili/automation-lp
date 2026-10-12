@@ -1,70 +1,38 @@
 # Teslim kontrol listesi
 
-Durum: 9 Ekim 2026. Kaynak: kullanıcının görev metni ve ekran görüntüleri, yerel proje, README, AI_LOG ve Git kontrolü. Bu dosya resmî başlangıç/teslim işlemi yapmaz. İşaretlenmeyen kişisel/başvuru maddelerinin durumu kullanıcıdan doğrulanmalıdır.
+Bu liste mevcut doğrulanmış durumu gösterir; resmî sayacı başlatmaz ve aktif çalışma süresi beyanı değildir.
 
-## İstenen ürün — yerelde tamamlananlar
+## Tamamlananlar
 
-- [x] Kurgusal teknoloji hizmeti, hedef kitle ve çözülen sorun: işletmeler için randevu otomasyonu.
-- [x] Mobil/masaüstü uyumlu tek sayfalık tanıtım ve bölüm bağlantıları.
-- [x] İsim, soyisim, e-posta, hizmet seçimi ve açıklama içeren form.
-- [x] İstemci ve sunucuda ayrı doğrulama.
-- [x] Gönderiliyor, başarı ve hata durumları; gönderim sırasında tekrar tıklama engeli.
-- [x] Başarı yalnızca sunucu kayıt onayıyla gösteriliyor.
-- [x] MongoDB Atlas'ta kalıcı kayıt; bağlantıyı kapatıp açma ve eşzamanlı tekrar testi. SQLite yalnızca yerel/eski test seçeneğidir.
-- [x] Hatalarda form bilgilerini koruma; yanıt kaybından sonra aynı anahtarla tekrar gönderimde çift kaydı önleme.
-- [x] Testlerde kurgusal veri; arayüzde yalnızca kurgusal veri kullanımı notu.
-- [x] Temel güvenlik: parametreli SQL, gövde sınırı, hız sınırı, Helmet/CSP, origin kontrolü.
-- [x] Klavye kullanımı, form etiketleri, hata odağı, canlı durum bildirimi, azaltılmış hareket.
+- [x] Kurgusal hizmetin hedefini ve faydasını anlatan mobil/masaüstü tek sayfa.
+- [x] İsim, soyisim, e-posta, hizmet seçimi ve açıklama formu.
+- [x] İstemci ve sunucu doğrulaması; gönderiliyor, başarı ve hata durumları.
+- [x] Başarı yalnızca kayıt onayıyla; hata halinde değerleri koruma ve tekrar gönderim koruması.
+- [x] MongoDB Atlas'ta kalıcı kayıt; yalnızca kurgusal test verisi.
+- [x] Temel güvenlik, erişilebilir etiketler, klavye ve azaltılmış hareket desteği.
+- [x] Ek özellikler: TR/EN, açık/koyu tema, mobil menü ve yerel SSS araması.
+- [x] README, AI_LOG ve güvenli .env.example.
+- [x] Özel GitHub deposuna kaynak kod gönderimi.
+- [x] Yerelde 12 Node + 52 tarayıcı testi ve üretim derlemesi.
+- [x] Gerçek Atlas ile 1 entegrasyon + 24 tarayıcı testi.
+- [x] GitHub Actions: 12 Node + 52 tarayıcı testi ve üretim derlemesi başarılı.
+- [x] Son npm audit: 0 bilinen açık; Git dışı .env ve sır kontrolü.
 
-## Ek olarak tamamlananlar
+CI kanıtı: https://github.com/tarikkiyili/automation-lp/actions/runs/38249598712
 
-- [x] Transloco Türkçe/İngilizce, form ve SSS çevirileri dahil.
-- [x] Açık/koyu tema; varsayılan açık; kaydedilmiş kullanıcı tercihlerini koruma.
-- [x] Dil ve tema değişim animasyonları.
-- [x] Mobil menü, sabit navbar, animasyonlu hero, slider, özellik kartları ve footer.
-- [x] 60 soruluk yerel SSS araması; arama için sunucu isteği yok.
+## Kalan zorunlu teslim işleri
 
-## Dokümantasyon ve doğrulama
-
-- [x] README: kurulum, mimari/kararlar, testler, ortam değişkenleri, bilinen sınırlar ve şablon durumu.
-- [x] AI_LOG: araç, önemli yönlendirmeler, kabul/değişiklik kararları, gerçek hatalar ve doğrulama kayıtları.
-- [x] Üretim derlemesi başarılı; son derleme bütçe uyarısı vermiyor.
-- [x] 8 Ekim: 12 Node ve o tarihteki 48 tarayıcı testi birlikte geçti.
-- [x] 9 Ekim son değişiklik: ilgili 18 navigasyon/tercih testi geçti. Mevcut toplam tarayıcı testi 52; tamamı son revizyonda birlikte yeniden çalıştırılmadı.
-- [x] Son bağımlılık taramasında 0 bilinen açık; bu sonuç önceki koşuma aittir, bugün tekrar taranmadı.
-- [x] 9 Ekim mevcut sürümde tam kontrol: 12 Node + 52 tarayıcı testi ve üretim derlemesi geçti; npm audit 0 bilinen açık. Vercel/veritabanı uyarlamasından sonra ilgili kontroller tekrar yapılmalı.
-- [ ] Kullanıcının README/AI_LOG incelemesi; kendi karar ve katkı anlatımını tamamlaması.
-- [ ] Başvurudaki ayrı yazılı problem çözme soruları varsa yanıtlarını tamamla. Soruların tamamı henüz görülmedi; README'nin bunların yerine geçtiği varsayılmıyor.
-
-## Zorunlu teslim adımları — henüz tamamlanmadı
-
-- [x] Barındırma tercihi: Vercel (9 Ekim).
-- [x] Vercel için MongoDB Atlas seçildi; Node API, bağlantı havuzu, ortam örnekleri ve Functions girişleri uyarlandı.
-- [x] Gerçek Atlas üzerinde entegrasyon testi ve 24 masaüstü/mobil form/tercih testi geçti. Tüm yerel 12 Node + 52 tarayıcı testi de geçti.
-- [ ] Vercel'e ortam değişkenlerini tanımla, Atlas ağ erişimini doğrula ve yayınla.
-- [ ] HTTPS canlı URL oluştur; localhost canlı teslim adresi değildir.
-- [ ] Canlı form kaydı, hata davranışı ve yeniden başlatma/dağıtım sonrası kalıcılığı kontrol et.
-- [x] Özel uzak Git deposu oluşturuldu: https://github.com/tarikkiyili/automation-lp. Kaynak gönderimi bu sürümün Git commit/push adımıyla takip edilir.
-- [ ] Değerlendirici erişimini ver ve doğrula.
-- [ ] `.env`, veritabanı ve test çıktılarının teslim deposunda olmadığını son kez kontrol et.
-- [ ] Canlı yayın doğrulamasından sonraki nihai teslim commit kimliğini kaydet (`git rev-parse HEAD`). Uzak depo `origin`, çalışma dalı `main` olarak bağlandı; mevcut GitHub README geçmişi korundu.
+- [ ] Vercel ortam değişkenlerini gir, Atlas ağ erişimini doğrula ve yayınla.
+- [ ] Canlı HTTPS URL'de form, hata akışı ve yeniden dağıtım sonrası kayıt kalıcılığını kontrol et.
+- [ ] Özel depoya değerlendirici erişimi ver ve doğrula.
+- [ ] README'ye canlı URL ekle; teslim öncesi sır kontrolünü tekrarla ve nihai commit kimliğini kaydet.
 - [ ] Canlı URL, kaynak kod bağlantısı ve commit kimliğini başvuru sistemine teslim et.
 
-## Kullanıcıdan doğrulanması/tamamlanması gerekenler
+## Kullanıcı tarafından tamamlanacak bilgiler
 
-- [ ] Başvuru/deneyim/yaklaşım alanları tamamlandı mı?
-- [ ] Resmî 24 saatlik sayaç başlatıldı mı? Başlangıç ve son teslim zamanını kaydet. Görselin güncel sayaç durumunu temsil ettiği varsayılmıyor.
-- [ ] Gerçek aktif çalışma süresini dürüstçe belirt.
-- [ ] Geçmiş proje ve kişisel katkını gerçek örneklerle açıkla.
-- [ ] Kodun veri akışını ve kararlarını kendi sözlerinle anlatabilecek şekilde incele.
+- [ ] Resmî başlangıç ve teslim zamanı; başlatıldıktan sonra kesintisiz 24 saat. En geç başlangıç: 30 Ekim 2026 23.59 İstanbul.
+- [ ] Gerçek aktif çalışma süresi; oturum süreleri ölçülmedi.
+- [ ] README/AI_LOG incelemesi, gerçek kişisel katkı ve geçmiş proje açıklaması.
+- [ ] Başvuruda ayrı yazılı problem çözme soruları varsa yanıtları.
 
-Görev metnine göre en geç başlangıç: 30 Ekim 2026, 23.59 İstanbul. Başlatıldıktan sonra 24 saat durdurulamaz. Bu liste sayacı başlatmaz/sıfırlamaz.
-
-## Zorunlu olmayan veya kapsam dışı kalanlar
-
-- Gerçek randevu motoru, SMS/e-posta gönderimi, hesap, yönetim paneli ve ödeme yapılmadı; landing page ve talep formu görevi için zorunlu değil.
-- Dockerfile ve CI tanımı hazır; Docker/uzak CI çalışması doğrulanmadı. Bunları seçersek ayrıca kontrol edeceğiz.
-- Fiziksel mobil cihaz, Safari/Firefox ve ekran okuyucuyla kapsamlı kontrol yapılmadı; mevcut mobil test Chromium emülasyonu.
-- Otomatik yedekleme, CAPTCHA ve otomatik veri temizleme yok; canlı barındırmaya göre değerlendirilmeli.
-
-Önerilen sıra: son kişisel içerik/kod incelemesi → son testler → özel depo ve yayın → canlı kalıcılık kontrolü → nihai commit kimliği ve teslim.
+Gerçek randevu motoru, SMS/e-posta, hesap, ödeme ve yönetim paneli bu görev için zorunlu değil. Docker, fiziksel telefon, Safari/Firefox ve ekran okuyucuyla kapsamlı doğrulama yapılmadı. Canlı dağıtım tamamlanmadan proje teslim edilmiş sayılmaz.
