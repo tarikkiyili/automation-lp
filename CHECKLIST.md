@@ -22,10 +22,12 @@ CI kanıtı: https://github.com/tarikkiyili/automation-lp/actions/runs/382495987
 
 ## Kalan zorunlu teslim işleri
 
-- [ ] Vercel ortam değişkenlerini gir, Atlas ağ erişimini doğrula ve yayınla.
+- [x] Canlı HTTPS arayüz yayını: https://automation-lp-blond.vercel.app/.
+- [ ] Vercel API başlangıç hatasını çöz: health ve form şu anda 503. Ortam değişkenleri/Atlas ağ erişimini doğrula.
 - [ ] Canlı HTTPS URL'de form, hata akışı ve yeniden dağıtım sonrası kayıt kalıcılığını kontrol et.
 - [ ] Özel depoya değerlendirici erişimi ver ve doğrula.
-- [ ] README'ye canlı URL ekle; teslim öncesi sır kontrolünü tekrarla ve nihai commit kimliğini kaydet.
+- [x] README'ye canlı URL ve gözlenen API engeli eklendi.
+- [ ] Teslim öncesi sır kontrolünü tekrarla ve nihai commit kimliğini kaydet.
 - [ ] Canlı URL, kaynak kod bağlantısı ve commit kimliğini başvuru sistemine teslim et.
 
 ## Kullanıcı tarafından tamamlanacak bilgiler

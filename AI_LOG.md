@@ -40,6 +40,10 @@ OpenAI Codex; planlama, Angular/Node kodu, SVG/CSS düzenlemeleri, test ve dokü
 
 ## Açık teslim işleri
 
-Vercel ortam ayarları/yayın, canlı form ve kalıcılık kontrolü, değerlendirici depo erişimi, nihai URL/commit teslimi. Resmî başlangıç zamanı, gerçek aktif çalışma süresi ve geçmiş proje/kişisel katkı açıklaması kullanıcı tarafından tamamlanmalıdır.
+Canlı Vercel API başlangıç hatasının çözülmesi, canlı form ve kalıcılık kontrolü, değerlendirici depo erişimi, nihai URL/commit teslimi. Resmî başlangıç zamanı, gerçek aktif çalışma süresi ve geçmiş proje/kişisel katkı açıklaması kullanıcı tarafından tamamlanmalıdır.
+
+## Canlı yayın kontrolü
+
+Kullanıcının paylaştığı https://automation-lp-blond.vercel.app/ Playwright ile kontrol edildi. Arayüz HTTP 200; 1440/390 px'de yatay taşma ve JavaScript çalışma hatası görülmedi. Mobil menü, TR/EN geçişi, tema saklama ve istemci doğrulaması çalıştı. API health ve kurgusal form gönderimi 503 döndü; form başarı göstermedi ve alanları korudu. API runtime kurulmadan reddedildiği için canlı sunucu doğrulaması, tekrar koruması ve kalıcılık bu koşumda doğrulanamadı. Aynı Atlas yerel bağlantısında ping başarılıydı; Vercel ortam ayarları/ağ erişimi ve Function logları incelenmelidir. Bu gerçek canlı engel teslim checklist'ine eklendi.
 
 Referanslar: [Transloco](https://jsverse.gitbook.io/transloco/), [Zod Mini](https://zod.dev/packages/mini), [MongoDB sürücüsü](https://www.mongodb.com/docs/drivers/node/current/crud/insert/), [Vercel Node runtime](https://vercel.com/docs/functions/runtimes/node-js).

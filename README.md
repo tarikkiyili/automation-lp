@@ -4,7 +4,9 @@
 
 Randevuyla çalışan işletmelere yönelik kurgusal hizmet tanıtımı ve çalışan talep formu. Angular 21, Node.js 24, Express 5 ve MongoDB Atlas kullanır. Form **hizmet talebi** kaydeder; gerçek müşteri randevusu oluşturmaz. Yalnızca kurgusal veri kullanın: `Deniz Örnek`, `fictional@example.com`.
 
-Geliştirici: [tarikkiyili](https://github.com/tarikkiyili) · Canlı yayın: henüz yapılmadı.
+Geliştirici: [tarikkiyili](https://github.com/tarikkiyili) · [Canlı site](https://automation-lp-blond.vercel.app/).
+
+Canlı kontrol: arayüz çalışıyor; API sağlık kontrolü ve form gönderimi 503 dönüyor. Canlı kayıt doğrulanmadı; Vercel sunucu başlangıcı/ortam ayarları düzeltilmelidir.
 
 ## Özellikler
 
@@ -124,7 +126,7 @@ API testleri geçici veritabanı, E2E ayrı `data/e2e.sqlite` kullanır. Yalnız
 
 ## Canlı yayın ve teslimde kalanlar
 
-Kaynak kod [özel GitHub deposunda](https://github.com/tarikkiyili/automation-lp) tutulur. **Canlı URL henüz oluşturulmadı.** Vercel yapılandırması ve MongoDB API bağlantısı hazır; canlı dağıtım ve Vercel ortamında doğrulama bekliyor. Değerlendiriciye ayrıca depo erişimi verilmelidir. Dockerfile ve GitHub Actions kontrolü hazır; Docker ve uzak CI sonuçları yerel test sonucu olarak gösterilmez.
+Kaynak kod [özel GitHub deposunda](https://github.com/tarikkiyili/automation-lp) tutulur. [Vercel yayını](https://automation-lp-blond.vercel.app/) açıldı; arayüz 200, API 503 döndüğü için canlı form ve kalıcılık doğrulaması bekliyor. Değerlendiriciye ayrıca depo erişimi verilmelidir. GitHub Actions testleri başarılı; Docker çalışması doğrulanmadı.
 
 Vercel kurulumu:
 
