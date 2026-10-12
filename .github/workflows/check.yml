@@ -9,6 +9,13 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
-      - run: npm run check
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: API and translation tests
+        run: npm test
+      - name: Production build
+        run: npm run build
+      - name: Desktop and mobile browser tests
+        run: npm run test:e2e

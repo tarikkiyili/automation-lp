@@ -1,4 +1,10 @@
 # AI kullanım kaydı
+## GitHub temiz kurulum düzeltmesi — 12 Ekim 2026
+
+- İlk push başarılıydı; GitHub Actions, backend testlerine ulaşmadan `npm ci` sırasında EUSAGE ile durdu. Logda kilit dosyasında eksik `@emnapi/core@1.11.3` ve `@emnapi/runtime@1.11.3` kayıtları görüldü.
+- Kilit dosyası, mevcut node_modules kullanılmayan ayrı çalışma klasöründe CI'daki npm 11.19.0 ile yeniden çözümlendi; Linux platformu için de doğrulandı. Paket sürümlerini topluca yükseltmek yerine mevcut kilit temel alındı.
+- CI adımları kurulum, API/çeviri testleri, üretim derlemesi ve tarayıcı testleri olarak ayrı adlandırıldı; sonraki hatalarda hangi aşamanın başarısız olduğu açıkça görülebilir.
+
 ## Geliştirme portu çakışması — 9 Ekim 2026
 
 - `npm run dev` sırasında 3000 portu, önceki kontrol için açık bırakılmış üretim önizleme sürecince kullanılıyordu. Yalnızca bu eski süreç kapatıldı; kullanıcının watch sürecine dokunulmadı.
